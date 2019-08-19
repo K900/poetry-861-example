@@ -17,7 +17,7 @@ COPY pyproject.toml poetry.lock /app/
 WORKDIR /app
 
 # disable creating virtualenvs - we're in docker anyway
-COPY config.toml /root/.config/pypoetry/config.toml
+RUN poetry config settings.virtualenvs.create false
 
 # and now let's install our app
 RUN poetry install
