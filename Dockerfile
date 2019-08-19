@@ -17,6 +17,7 @@ COPY pyproject.toml poetry.lock /app/
 WORKDIR /app
 
 # 1.0.0b1 does not like not having a config file, but this seems like an unrelated issue
+# https://github.com/sdispater/poetry/issues/1296
 RUN mkdir -p /root/.config/pypoetry
 RUN touch /root/.config/pypoetry/config.toml
 
